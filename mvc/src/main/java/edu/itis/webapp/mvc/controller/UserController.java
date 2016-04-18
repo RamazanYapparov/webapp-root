@@ -19,11 +19,8 @@ import java.util.List;
 @Controller
 public class UserController {
 
-    @Autowired//@Resource(name = "userRepository")
-            GenericRepository<User> userRepository;
-
-    @Autowired//@Resource(name = "orderRepository")
-            GenericRepository<Order> orderRepository;
+    @Autowired
+    GenericRepository<User> userRepository;
 
     @RequestMapping(value = "/")
     public String welcome() {
@@ -69,7 +66,7 @@ public class UserController {
     @RequestMapping(value = "/userupdate", method = RequestMethod.POST)
     public String userupdate(@Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "userupdate";
+            return "userinfo";
         } else {
             userRepository.update(user);
             return "redirect:/userlist";

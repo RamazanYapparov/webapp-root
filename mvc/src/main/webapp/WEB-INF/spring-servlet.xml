@@ -14,6 +14,7 @@
     <context:annotation-config/>
     <context:component-scan base-package="edu.itis.webapp" />
     <mvc:annotation-driven/>
+    <mvc:resources mapping="css/**" location="classpath:/css/" />
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="WEB-INF/jsp/" p:suffix=".jsp" />
