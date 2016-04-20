@@ -7,53 +7,64 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "\"ORDER\"")
+@Table(name = "ORDER")
 public class Order implements GenericEntity{
 
 	@Id
     @Column(name = "id")
-	public Long id;
+    private Long id;
 
     @Column(name = "customerId")
-	public Integer customerId;
+    private Integer customerId;
 
     @Column(name = "salesPersonId")
-	public Integer salesPersonId;
+    private Integer salesPersonId;
 
-	@Override
-	public Long getId() {
-		return id;
-	}
+	@Column(name = "PRODUCT")
+    private String product;
 
-	@Override
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	public Integer getCustomerId() {
-		return customerId;
-	}
-	
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
-	}
-	
-	public Integer getSalesPersonId() {
-		return salesPersonId;
-	}
-	
-	public void setSalesPersonId(Integer salesPersonId) {
-		this.salesPersonId = salesPersonId;
-	}
-	
-	@Override
-	public String toString() {
-		StringBuilder  sb = new StringBuilder();
-		sb.append(id);
-		sb.append(" " + customerId);
-		sb.append(" " + salesPersonId);
-		return sb.toString();
-	}
-	
-	
+    @Column(name = "PRICE")
+	private Integer price;
+
+    @Override
+    public Long getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Integer getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
+    }
+
+    public Integer getSalesPersonId() {
+        return salesPersonId;
+    }
+
+    public void setSalesPersonId(Integer salesPersonId) {
+        this.salesPersonId = salesPersonId;
+    }
+
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
 }
