@@ -50,7 +50,7 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/userdelete", method = RequestMethod.GET)
+    @RequestMapping(value = "/userdelete", method = RequestMethod.POST)
     public String userdelete(@RequestParam(name = "id") String id) {
         userRepository.delete(Long.valueOf(id));
         return "redirect:/userlist";

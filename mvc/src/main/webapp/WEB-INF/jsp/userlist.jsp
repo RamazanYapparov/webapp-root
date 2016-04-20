@@ -10,14 +10,14 @@
     <c:set value="mvc-1.0-SNAPSHOT" var="context"/>
 </head>
 <body>
-    <ul class="list-inline">
-        <li><a href="/${context}/userlist">Список пользователей</a></li>
-        <li><a href="/${context}/adduser">Добавить пользователя</a></li>
-        <li><a href="/${context}/orderlist">Список заказов</a></li>
-        <li><a href="/${context}/addorder">Добавить заказ</a></li>
-    </ul>
+<ul class="list-inline">
+    <li><a href="/${context}/userlist">Список пользователей</a></li>
+    <li><a href="/${context}/adduser">Добавить пользователя</a></li>
+    <li><a href="/${context}/orderlist">Список заказов</a></li>
+    <li><a href="/${context}/addorder">Добавить заказ</a></li>
+</ul>
 <div class="col-md-6 center-block">
-    <table width="500" border="1">
+    <table width="400" border="1">
         <caption>Список пользователей</caption>
         <tr>
             <th>Фамилия</th>
@@ -31,10 +31,14 @@
                 <td>${user.getLastname()}</td>
                 <td>${user.getAge()}</td>
                 <td>
-                    <ul class="list-inline">
-                        <li><a href="/${context}/userupdate?id=${user.getId()}">Изменить</a></li>
-                        <li><a href="/${context}/userdelete?id=${user.getId()}">Удалить</a></li>
-                    </ul>
+                    <form:form method="get" action="/${context}/userupdate">
+                        <input type="hidden" name="id" value="${user.getId()}"/>
+                        <input type="submit" value="Изменить"/>
+                    </form:form>
+                    <form:form method="post" action="/${context}/userdelete">
+                        <input type="hidden" name="id" value="${user.getId()}"/>
+                        <input type="submit" value="Удалить">
+                    </form:form>
                 </td>
             </tr>
         </c:forEach>
