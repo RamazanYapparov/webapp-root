@@ -10,13 +10,13 @@
     <c:set value="mvc-1.0-SNAPSHOT" var="context"/>
 </head>
 <body>
-<div class="col-md-6 center-block">
     <ul class="list-inline">
         <li><a href="/${context}/userlist">Список пользователей</a></li>
         <li><a href="/${context}/adduser">Добавить пользователя</a></li>
         <li><a href="/${context}/orderlist">Список заказов</a></li>
         <li><a href="/${context}/addorder">Добавить заказ</a></li>
     </ul>
+<div class="col-md-6 center-block">
     <table width="500" border="1">
         <caption>Список пользователей</caption>
         <tr>
