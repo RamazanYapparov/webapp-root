@@ -1,13 +1,10 @@
 package edu.itis.webapp.dao.entities;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "ORDER")
+@Table(name = "ORDERS")
 public class Order implements GenericEntity{
 
 	@Id
@@ -15,10 +12,18 @@ public class Order implements GenericEntity{
     private Long id;
 
     @Column(name = "customerId")
-    private Integer customerId;
+    private Long customerId;
+
+    @ManyToOne
+    @JoinColumn(name = "customerId", referencedColumnName = "id", insertable = false, updatable = false)
+    private User customer;
 
     @Column(name = "salesPersonId")
-    private Integer salesPersonId;
+    private Long salesPersonId;
+
+    @ManyToOne
+    @JoinColumn(name = "salesPersonId", referencedColumnName = "id", insertable = false, updatable = false)
+    private User salesPerson;
 
 	@Column(name = "PRODUCT")
     private String product;
@@ -36,20 +41,36 @@ public class Order implements GenericEntity{
         this.id = id;
     }
 
-    public Integer getCustomerId() {
+    public Long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(Integer customerId) {
+    public void setCustomerId(Long customerId) {
         this.customerId = customerId;
     }
 
-    public Integer getSalesPersonId() {
+    public User getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(User customer) {
+        this.customer = customer;
+    }
+
+    public Long getSalesPersonId() {
         return salesPersonId;
     }
 
-    public void setSalesPersonId(Integer salesPersonId) {
+    public void setSalesPersonId(Long salesPersonId) {
         this.salesPersonId = salesPersonId;
+    }
+
+    public User getSalesPerson() {
+        return salesPerson;
+    }
+
+    public void setSalesPerson(User salesPerson) {
+        this.salesPerson = salesPerson;
     }
 
     public String getProduct() {

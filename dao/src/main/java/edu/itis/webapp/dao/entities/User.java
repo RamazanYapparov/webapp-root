@@ -8,7 +8,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "\"USER\"")
+@Table(name = "USERS")
 public class User implements GenericEntity {
 
     @Id
