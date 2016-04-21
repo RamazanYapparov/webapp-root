@@ -31,15 +31,15 @@
             <th>Товар</th>
             <th>Действия</th>
         </tr>
-        <c:forEach items="${userList}" var="user">
+        <c:forEach items="${orderList}" var="order">
             <tr>
-                <td>${user.getFirstname()}</td>
-                <td>${user.getLastname()}</td>
-                <td>${user.getAge()}</td>
+                <td>${order.customer.firstname} ${order.customer.lastname}</td>
+                <td>${order.salesPerson.firstname} ${order.salesPerson.lastname}</td>
+                <td>${order.product}</td>
                 <td>
                     <ul class="list-inline">
-                        <li><a href="/${context}/userupdate?id=${user.getId()}">Изменить</a></li>
-                        <li><a href="/${context}/userdelete?id=${user.getId()}">Удалить</a></li>
+                        <li><a href="/${context}/userupdate?id=${order.getId()}">Изменить</a></li>
+                        <li><a href="/${context}/userdelete?id=${order.getId()}">Удалить</a></li>
                     </ul>
                 </td>
             </tr>
