@@ -21,20 +21,20 @@
         <li><a href="/${context}/orderlist">Список заказов</a></li>
         <li><a href="/${context}/addorder">Добавить заказ</a></li>
     </ul>
-    <c:set var="name"/>
-    <form:form method="post" modelAttribute="order">
+    <div class="col-md-6 center-block">
+        <form:form method="post" modelAttribute="order">
 
-        <label for="customer">Покупатель</label> <form:errors path="customer" cssClass="error"/> <br/>
-        <form:select path="customerId" name="customer">
-            <form:options items="${userList}" itemLabel="fio" itemValue="id" />
-        </form:select> <br/>
+            <label for="customer">Покупатель</label> <form:errors path="customer" cssClass="error"/> <br/>
+            <form:select path="customerId" name="customer">
+                <form:options items="${userList}" itemLabel="fio" itemValue="id"/>
+            </form:select> <br/>
 
-        <label for="sales">Продавец</label> <form:errors path="salesPerson" cssClass="error"/> <br/>
-        <form:select path="salesPersonId" name="sales">
-            <form:options items="${userList}" itemLabel="fio" itemValue="id" />
-        </form:select> <br/>
-        <input type="submit" value="Принять">
-    </form:form>
-</div>
+            <label for="sales">Продавец</label> <form:errors path="salesPerson" cssClass="error"/> <br/>
+            <form:select path="salesPersonId" name="sales">
+                <form:options items="${userList}" itemLabel="fio" itemValue="id"/>
+            </form:select> <br/>
+            <input type="submit" value="Принять">
+        </form:form>
+    </div>
 </body>
 </html>

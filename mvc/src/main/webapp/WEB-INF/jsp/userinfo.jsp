@@ -14,14 +14,15 @@
     <c:set value="mvc-1.0-SNAPSHOT" var="context"/>
 </head>
 <body>
+</body>
+
+<ul class="list-inline">
+    <li><a href="/${context}/userlist">Список пользователей</a></li>
+    <li><a href="/${context}/adduser">Добавить пользователя</a></li>
+    <li><a href="/${context}/orderlist">Список заказов</a></li>
+    <li><a href="/${context}/addorder">Добавить заказ</a></li>
+</ul>
 <div class="col-md-6 center-block">
-    <ul class="list-inline">
-        <li><a href="/${context}/userlist">Список пользователей</a></li>
-        <li><a href="/${context}/adduser">Добавить пользователя</a></li>
-        <li><a href="/${context}/orderlist">Список заказов</a></li>
-        <li><a href="/${context}/addorder">Добавить заказ</a></li>
-    </ul>
-    <c:set var="name"/>
     <form:form method="post" modelAttribute="user">
 
         <label for="name">Имя</label> <form:errors path="firstname" cssClass="error"/> <br/>
@@ -35,5 +36,4 @@
         <input type="submit" value="Принять">
     </form:form>
 </div>
-</body>
 </html>
