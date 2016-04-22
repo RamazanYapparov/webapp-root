@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface GenericRepository<T extends GenericEntity> {
+public interface GenericService<T extends GenericEntity> {
 
     List<T> getAll();
 

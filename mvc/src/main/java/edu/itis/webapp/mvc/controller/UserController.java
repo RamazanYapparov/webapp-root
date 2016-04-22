@@ -1,18 +1,15 @@
 package edu.itis.webapp.mvc.controller;
 
-import edu.itis.webapp.dao.entities.Order;
 import edu.itis.webapp.dao.entities.User;
-import edu.itis.webapp.dao.repository.GenericRepository;
+import edu.itis.webapp.dao.repository.GenericService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.annotation.Resource;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -20,7 +17,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    GenericRepository<User> userRepository;
+    GenericService<User> userService;
 
     @RequestMapping(value = "/")
     public String welcome() {
@@ -29,7 +26,7 @@ public class UserController {
 
     @RequestMapping(value = "/userlist", method = RequestMethod.GET)
     public String userlist(Model model) {
-        List userList = userRepository.getAll();
+        List userList = userService.getAll();
         model.addAttribute("userList", userList);
         return "userlist";
     }
@@ -45,20 +42,22 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             return "userinfo";
         } else {
-            userRepository.add(user);
+            userService.add(user);
             return "redirect:/userlist";
         }
     }
 
     @RequestMapping(value = "/userdelete", method = RequestMethod.POST)
     public String userdelete(@RequestParam(name = "id") String id) {
-        userRepository.delete(Long.valueOf(id));
+        System.out.print("idea: ");
+        System.out.print(id + " ");
+        userService.delete(Long.valueOf(id));
         return "redirect:/userlist";
     }
 
     @RequestMapping(value = "/userupdate", method = RequestMethod.GET)
     public String userupdate(@RequestParam(name = "id") String id, Model model) {
-        User user = userRepository.get(Long.valueOf(id));
+        User user = userService.get(Long.valueOf(id));
         model.addAttribute("user", user);
         return "userinfo";
     }
@@ -68,7 +67,7 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             return "userinfo";
         } else {
-            userRepository.update(user);
+            userService.update(user);
             return "redirect:/userlist";
         }
     }

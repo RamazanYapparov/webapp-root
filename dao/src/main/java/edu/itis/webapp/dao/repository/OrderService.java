@@ -8,12 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.annotation.Resource;
 import java.util.List;
 
-@Service("orderRepository")
+@Service("orderService")
 @Transactional
-public class OrderRepository implements GenericRepository<Order> {
+public class OrderService implements GenericService<Order> {
 
     @Autowired
     private SessionFactory sessionFactory;

@@ -10,9 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service("userRepository")
+@Service("userService")
 @Transactional
-public class UserRepository implements GenericRepository<User> {
+public class UserService implements GenericService<User> {
 
     @Autowired
     private SessionFactory sessionFactory;
@@ -48,6 +48,8 @@ public class UserRepository implements GenericRepository<User> {
     public void delete(Long id) {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
+
+        System.out.println("idea: " + id);
 
         User deleteUser = session.get(User.class, id);
 
