@@ -15,21 +15,21 @@ public class Order implements GenericEntity{
     @Column(name = "customerId")
     private Long customerId;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customerId", referencedColumnName = "id", insertable = false, updatable = false)
     private User customer;
 
     @Column(name = "salesPersonId")
     private Long salesPersonId;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "salesPersonId", referencedColumnName = "id", insertable = false, updatable = false)
     private User salesPerson;
 
-	@Column(name = "PRODUCT")
+	@Column(name = "product")
     private String product;
 
-    @Column(name = "PRICE")
+    @Column(name = "price")
 	private Integer price;
 
     @Override
