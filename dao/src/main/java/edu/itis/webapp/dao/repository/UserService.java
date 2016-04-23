@@ -42,6 +42,7 @@ public class UserService implements GenericService<User> {
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();
         session.save(user);
+        session.getTransaction().commit();
     }
 
     @Override
@@ -54,6 +55,7 @@ public class UserService implements GenericService<User> {
         User deleteUser = session.get(User.class, id);
 
         session.delete(deleteUser);
+        session.getTransaction().commit();
     }
 
     @Override
@@ -68,5 +70,6 @@ public class UserService implements GenericService<User> {
         updateUser.setAge(user.getAge());
 
         session.save(updateUser);
+        session.getTransaction().commit();
     }
 }

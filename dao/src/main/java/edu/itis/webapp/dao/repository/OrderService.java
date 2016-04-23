@@ -40,28 +40,31 @@ public class OrderService implements GenericService<Order> {
     @Override
     public void add(Order order) {
         Session session = sessionFactory.getCurrentSession();
-
+        session.beginTransaction();
         session.save(order);
+        session.getTransaction().commit();
     }
 
     @Override
     public void delete(Long id) {
         Session session = sessionFactory.getCurrentSession();
-
+        session.beginTransaction();
         Order deleteOrder = session.get(Order.class, id);
 
         session.delete(deleteOrder);
+        session.getTransaction().commit();
     }
 
     @Override
     public void update(Order order) {
         Session session = sessionFactory.getCurrentSession();
-
+        session.beginTransaction();
         Order updateOrder = session.get(Order.class, order.getId());
 
         updateOrder.setCustomerId(order.getCustomerId());
         updateOrder.setSalesPersonId(order.getSalesPersonId());
 
         session.save(updateOrder);
+        session.getTransaction().commit();
     }
 }
