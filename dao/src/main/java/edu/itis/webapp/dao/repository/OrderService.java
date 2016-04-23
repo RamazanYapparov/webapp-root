@@ -31,6 +31,7 @@ public class OrderService implements GenericService<Order> {
     @Override
     public Order get(Long id) {
         Session session = sessionFactory.getCurrentSession();
+        session.beginTransaction();
 
         Order selectedOrder = session.get(Order.class, id);
 
