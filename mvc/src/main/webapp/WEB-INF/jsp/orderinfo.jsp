@@ -14,7 +14,6 @@
     <c:set value="mvc-1.0-SNAPSHOT" var="context"/>
 </head>
 <body>
-<div class="col-md-6 center-block">
     <ul class="list-inline">
         <li><a href="/${context}/userlist">Список пользователей</a></li>
         <li><a href="/${context}/adduser">Добавить пользователя</a></li>
@@ -29,10 +28,26 @@
                 <form:options items="${userList}" itemLabel="fio" itemValue="id"/>
             </form:select> <br/>
 
+            <br />
+
             <label for="sales">Продавец</label> <form:errors path="salesPerson" cssClass="error"/> <br/>
             <form:select path="salesPersonId" name="sales">
                 <form:options items="${userList}" itemLabel="fio" itemValue="id"/>
             </form:select> <br/>
+
+            <br />
+
+            <label for="product">Название товара</label> <form:errors path="product" cssClass="error"/> <br/>
+            <form:input path="product" name="product"/> <br />
+
+            <br />
+
+            <label for="price">Цена</label> <form:errors path="price" cssClass="error"/> <br/>
+            <form:input path="price" name="price"/>
+
+            <br />
+            <br />
+
             <input type="submit" value="Принять">
         </form:form>
     </div>
