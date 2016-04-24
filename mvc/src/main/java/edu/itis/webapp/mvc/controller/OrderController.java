@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -39,6 +40,26 @@ public class OrderController {
     @RequestMapping(value = "/addorder", method = RequestMethod.POST)
     public String addorder(Order order) {
         orderService.add(order);
+        return "redirect:/orderlist";
+    }
+
+    @RequestMapping(value = "/updateorder", method = RequestMethod.GET)
+    public String updateorder(@RequestParam(name = "id") String id, Model model) {
+        Order order = orderService.get(Long.valueOf(id));
+        List<User> userList = userService.getAll();
+        model.addAttribute("order", order);
+        model.addAttribute("userList", userList);
+        return "orderinfo";
+    }
+
+    @RequestMapping(value = "/updateorder", method = RequestMethod.POST)
+    public String updateorder(Order order) {
+        return "redirect:/orderlist";
+    }
+
+    @RequestMapping(value = "/deleteorder", method = RequestMethod.POST)
+    public String deleteorder(@RequestParam(name = "id") String id) {
+        orderService.delete(Long.valueOf(id));
         return "redirect:/orderlist";
     }
 

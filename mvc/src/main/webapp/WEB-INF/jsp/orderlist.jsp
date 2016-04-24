@@ -1,11 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: ramazan
-  Date: 18.04.16
-  Time: 12:41
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -38,10 +32,14 @@
                 <td>${order.salesPerson.firstname} ${order.salesPerson.lastname}</td>
                 <td>${order.product}</td>
                 <td>
-                    <ul class="list-inline">
-                        <li><a href="/${context}/userupdate?id=${order.getId()}">Изменить</a></li>
-                        <li><a href="/${context}/userdelete?id=${order.getId()}">Удалить</a></li>
-                    </ul>
+                    <form:form method="get" action="/${context}/updateorder">
+                        <input type="hidden" name="id" value="${order.getId()}"/>
+                        <input type="submit" value="Изменить"/>
+                    </form:form>
+                    <form:form method="post" action="/${context}/deleteorder">
+                        <input type="hidden" name="id" value="${order.getId()}"/>
+                        <input type="submit" value="Удалить">
+                    </form:form>
                 </td>
             </tr>
         </c:forEach>
