@@ -15,14 +15,14 @@ public class Order implements GenericEntity{
     @Column(name = "customerId")
     private Long customerId;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customerId", referencedColumnName = "id", insertable = false, updatable = false)
     private User customer;
 
     @Column(name = "salesPersonId")
     private Long salesPersonId;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "salesPersonId", referencedColumnName = "id", insertable = false, updatable = false)
     private User salesPerson;
 
