@@ -16,24 +16,41 @@
 <body>
 </body>
 
-<ul class="list-inline">
-    <li><a href="/${context}/userlist">Список пользователей</a></li>
-    <li><a href="/${context}/adduser">Добавить пользователя</a></li>
-    <li><a href="/${context}/orderlist">Список заказов</a></li>
-    <li><a href="/${context}/addorder">Добавить заказ</a></li>
-</ul>
-<div class="col-md-6 center-block">
-    <form:form method="post" modelAttribute="user">
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/${context}/userlist">Список пользователей</a></li>
+                <li><a href="/${context}/adduser">Добавить пользователя</a></li>
+                <li><a href="/${context}/orderlist">Список заказов</a></li>
+                <li><a href="/${context}/addorder">Добавить заказ</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+<div class="container">
+    <div class="col-md-6 center-block">
+        <form:form method="post" modelAttribute="user">
 
-        <label for="name">Имя</label> <form:errors path="firstname" cssClass="error"/> <br/>
-        <form:input path="firstname" name="name" value="${firstname}"/> <br/>
+            <label for="name">Имя</label> <form:errors path="firstname" cssClass="error"/> <br/>
+            <form:input path="firstname" name="name" value="${firstname}"/> <br/>
 
-        <label for="lastname">Фамилия</label> <form:errors path="lastname" cssClass="error"/> <br/>
-        <form:input path="lastname" type="text" name="lastname" value="${lastname}"/> <br/>
+            <label for="lastname">Фамилия</label> <form:errors path="lastname" cssClass="error"/> <br/>
+            <form:input path="lastname" type="text" name="lastname" value="${lastname}"/> <br/>
 
-        <label for="age">Возраст</label> <form:errors path="age" cssClass="error"/> <br/>
-        <form:input path="age" type="text" name="age" value="${age}"/> <br/>
-        <input type="submit" value="Принять">
-    </form:form>
+            <label for="age">Возраст</label> <form:errors path="age" cssClass="error"/> <br/>
+            <form:input path="age" type="text" name="age" value="${age}"/> <br/>
+            <input type="submit" value="Принять">
+        </form:form>
+    </div>
 </div>
 </html>
