@@ -17,7 +17,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    GenericService<User> userService;
+    private GenericService<User> userService;
 
     @RequestMapping(value = "/")
     public String welcome() {
