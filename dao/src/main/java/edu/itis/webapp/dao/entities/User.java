@@ -75,8 +75,4 @@ public class User implements GenericEntity {
         this.id = id;
     }
 
-    public String getFio() {
-        return firstname + " " + lastname;
-    }
-
 }

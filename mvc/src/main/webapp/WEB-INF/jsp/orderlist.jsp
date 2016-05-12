@@ -47,6 +47,7 @@
                     <td>${order.customer.firstname} ${order.customer.lastname}</td>
                     <td>${order.salesPerson.firstname} ${order.salesPerson.lastname}</td>
                     <td>${order.product}</td>
+                    <td>${order.price}</td>
                     <td>
                         <form:form method="get" action="/${context}/updateorder">
                             <input type="hidden" name="id" value="${order.getId()}"/>
