@@ -49,8 +49,6 @@ public class UserController {
 
     @RequestMapping(value = "/userdelete", method = RequestMethod.POST)
     public String userdelete(@RequestParam(name = "id") String id) {
-        System.out.print("idea: ");
-        System.out.print(id + " ");
         userService.delete(Long.valueOf(id));
         return "redirect:/userlist";
     }

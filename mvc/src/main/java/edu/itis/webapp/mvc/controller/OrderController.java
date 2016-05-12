@@ -54,6 +54,7 @@ public class OrderController {
 
     @RequestMapping(value = "/updateorder", method = RequestMethod.POST)
     public String updateorder(Order order) {
+        orderService.update(order);
         return "redirect:/orderlist";
     }
 
