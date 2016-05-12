@@ -2,8 +2,11 @@ package edu.itis.webapp.dao.entities;
 
 
 import org.hibernate.annotations.Proxy;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "ORDERS")
@@ -29,9 +32,12 @@ public class Order implements GenericEntity{
     @JoinColumn(name = "salesPersonId", referencedColumnName = "id", insertable = false, updatable = false)
     private User salesPerson;
 
-	@Column(name = "product")
+    @NotEmpty(message = "заполните поле")
+    @Column(name = "product")
     private String product;
 
+    @NotNull(message = "заполните поле")
+    @Min(value = 1, message = "должно быть положительным числом")
     @Column(name = "price")
 	private Integer price;
 
