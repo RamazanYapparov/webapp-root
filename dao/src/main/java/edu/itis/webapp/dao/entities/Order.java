@@ -1,15 +1,18 @@
 package edu.itis.webapp.dao.entities;
 
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "ORDERS")
+@Proxy(lazy = false)
 public class Order implements GenericEntity{
 
 	@Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "customerId")
