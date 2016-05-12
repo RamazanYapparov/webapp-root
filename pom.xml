@@ -21,7 +21,7 @@
 
         <maven.failsafe.plugin>2.12</maven.failsafe.plugin>
 
-        <derby.version>10.12.1.1</derby.version>
+        <mysql.connector.version>5.1.38</mysql.connector.version>
         <junit.version>4.12</junit.version>
         <servlet.version>3.1.0</servlet.version>
         <spring.version>4.2.5.RELEASE</spring.version>
@@ -31,6 +31,7 @@
         <hibernate.version>5.1.0.Final</hibernate.version>
         <hibernate.annotation.version>5.0.1.Final</hibernate.annotation.version>
         <dbcp.version>1.4</dbcp.version>
+        <jboss.logging.version>3.3.0.Final</jboss.logging.version>
         <deployFolder>/home/ramazan/Java/apache-tomcat-8.0.33/webapps</deployFolder>
     </properties>
 
@@ -139,14 +140,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.38</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.apache.derby</groupId>
-                <artifactId>derby</artifactId>
-                <version>${derby.version}</version>
-                <scope>runtime</scope>
+                <version>${mysql.connector.version}</version>
             </dependency>
 
             <!-- Spring framework -->
@@ -184,6 +178,11 @@
             <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
                 <version>${spring.version}</version>
             </dependency>
 
@@ -242,21 +241,10 @@
                 <version>${dbcp.version}</version>
             </dependency>
 
-            <!--<dependency>
-                <groupId>javax.el</groupId>
-                <artifactId>javax.el-api</artifactId>
-                <version>2.2.4</version>
-            </dependency>
-            <dependency>
-                <groupId>org.glassfish.web</groupId>
-                <artifactId>javax.el</artifactId>
-                <version>2.2.4</version>
-            </dependency>-->
-
             <dependency>
                 <groupId>org.jboss.logging</groupId>
                 <artifactId>jboss-logging</artifactId>
-                <version>3.3.0.Final</version>
+                <version>${jboss.logging.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
