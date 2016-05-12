@@ -11,9 +11,9 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "ORDERS")
 @Proxy(lazy = false)
-public class Order implements GenericEntity{
-
-	@Id
+public class Order implements GenericEntity {
+    
+    @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -39,7 +39,7 @@ public class Order implements GenericEntity{
     @NotNull(message = "заполните поле")
     @Min(value = 1, message = "должно быть положительным числом")
     @Column(name = "price")
-	private Integer price;
+    private Integer price;
 
     @Override
     public Long getId() {
