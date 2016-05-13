@@ -28,18 +28,19 @@
                 <li><a href="/${context}/orderlist">Список заказов</a></li>
                 <li><a href="/${context}/addorder">Добавить заказ</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
 <div class="container">
     <div class="col-md-6 center-block">
 
-        <table width="500" border="1">
+        <table width="500" border="1" class="table table-bordered">
             <caption>Список заказов</caption>
             <tr>
                 <th>Продавец</th>
                 <th>Покупатель</th>
                 <th>Товар</th>
+                <th>Цена</th>
                 <th>Действия</th>
             </tr>
             <c:forEach items="${orderList}" var="order">
@@ -49,14 +50,19 @@
                     <td>${order.product}</td>
                     <td>${order.price}</td>
                     <td>
-                        <form:form method="get" action="/${context}/updateorder">
-                            <input type="hidden" name="id" value="${order.getId()}"/>
-                            <input type="submit" value="Изменить"/>
-                        </form:form>
-                        <form:form method="post" action="/${context}/deleteorder">
-                            <input type="hidden" name="id" value="${order.getId()}"/>
-                            <input type="submit" value="Удалить">
-                        </form:form>
+                        <ul class="list-inline">
+                            <li>
+                                <form:form method="get" action="/${context}/updateorder">
+                                    <input type="hidden" name="id" value="${order.getId()}"/>
+                                    <input type="submit" value="Изменить" class="btn btn-primary"/>
+                                </form:form></li>
+                            <li>
+                                <form:form method="post" action="/${context}/deleteorder">
+                                    <input type="hidden" name="id" value="${order.getId()}"/>
+                                    <input type="submit" value="Удалить" class="btn btn-danger">
+                                </form:form>
+                            </li>
+                        </ul>
                     </td>
                 </tr>
             </c:forEach>

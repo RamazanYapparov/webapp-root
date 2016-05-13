@@ -13,15 +13,6 @@
 <body>
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="container">
-        <%--<div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>--%>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/${context}/userlist">Список пользователей</a></li>
@@ -29,12 +20,12 @@
                 <li><a href="/${context}/orderlist">Список заказов</a></li>
                 <li><a href="/${context}/addorder">Добавить заказ</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
 <div class="container">
     <div class="col-md-6 center-block">
-        <table width="400" border="1">
+        <table class="table table-bordered" width="400" border="1">
             <caption>Список пользователей</caption>
             <tr>
                 <th>Фамилия</th>
@@ -50,11 +41,11 @@
                     <td>
                         <form:form method="get" action="/${context}/userupdate">
                             <input type="hidden" name="id" value="${user.getId()}"/>
-                            <input type="submit" value="Изменить"/>
+                            <input type="submit" value="Изменить" class="btn btn-primary"/>
                         </form:form>
                         <form:form method="post" action="/${context}/userdelete">
                             <input type="hidden" name="id" value="${user.getId()}"/>
-                            <input type="submit" value="Удалить">
+                            <input type="submit" value="Удалить" class="btn btn-danger">
                         </form:form>
                     </td>
                 </tr>

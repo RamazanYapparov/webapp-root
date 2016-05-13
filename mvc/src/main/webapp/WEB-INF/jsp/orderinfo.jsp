@@ -32,7 +32,7 @@
                 <li><a href="/${context}/orderlist">Список заказов</a></li>
                 <li><a href="/${context}/addorder">Добавить заказ</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
 <div class="container">
@@ -64,7 +64,7 @@
             <br/>
             <br/>
 
-            <input type="submit" value="Принять">
+            <input type="submit" value="Принять" class="btn btn-primary">
         </form:form>
     </div>
 </div>

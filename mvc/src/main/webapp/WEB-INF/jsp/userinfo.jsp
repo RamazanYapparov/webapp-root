@@ -34,7 +34,7 @@
                 <li><a href="/${context}/orderlist">Список заказов</a></li>
                 <li><a href="/${context}/addorder">Добавить заказ</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
 <div class="container">
@@ -42,14 +42,14 @@
         <form:form method="post" modelAttribute="user">
 
             <label for="name">Имя</label> <form:errors path="firstname" cssClass="error"/> <br/>
-            <form:input path="firstname" name="name" value="${firstname}"/> <br/>
+            <form:input path="firstname" name="name" value="${user.firstname}"/> <br/>
 
             <label for="lastname">Фамилия</label> <form:errors path="lastname" cssClass="error"/> <br/>
-            <form:input path="lastname" type="text" name="lastname" value="${lastname}"/> <br/>
+            <form:input path="lastname" type="text" name="lastname" value="${user.lastname}"/> <br/>
 
             <label for="age">Возраст</label> <form:errors path="age" cssClass="error"/> <br/>
-            <form:input path="age" type="text" name="age" value="${age}"/> <br/>
-            <input type="submit" value="Принять">
+            <form:input path="age" type="text" name="age" value="${user.age}"/> <br/>
+            <input type="submit" value="Принять" class="btn btn-primary">
         </form:form>
     </div>
 </div>
