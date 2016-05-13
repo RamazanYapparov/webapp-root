@@ -2,6 +2,7 @@ package edu.itis.webapp.mvc.controller;
 
 import edu.itis.webapp.dao.entities.User;
 import edu.itis.webapp.dao.repository.GenericService;
+import edu.itis.webapp.mvc.validator.NumberValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +41,7 @@ public class UserController {
     @RequestMapping(value = "/adduser", method = RequestMethod.POST)
     public String adduser(@Valid User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
+            new NumberValidator().validate(user, bindingResult);
             return "userinfo";
         } else {
             userService.add(user);
