@@ -16,15 +16,6 @@
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/${context}/userlist">Список пользователей</a></li>
@@ -39,26 +30,30 @@
     <div class="starter-template">
         <form:form method="post" modelAttribute="order">
 
-            <label for="customer">Покупатель</label> <form:errors path="customer" cssClass="error"/> <br/>
+            <label for="customer">Покупатель</label> <br/>
+            <form:errors path="customer" cssClass="error"/> <br/>
             <form:select path="customerId" name="customer">
                 <form:options items="${userList}" itemLabel="fio" itemValue="id"/>
             </form:select> <br/>
 
             <br/>
 
-            <label for="sales">Продавец</label> <form:errors path="salesPerson" cssClass="error"/> <br/>
+            <label for="sales">Продавец</label> <br/>
+            <form:errors path="salesPerson" cssClass="error"/> <br/>
             <form:select path="salesPersonId" name="sales">
                 <form:options items="${userList}" itemLabel="fio" itemValue="id"/>
             </form:select> <br/>
 
             <br/>
 
-            <label for="product">Название товара</label> <form:errors path="product" cssClass="error"/> <br/>
+            <label for="product">Название товара</label> <br/>
+            <form:errors path="product" cssClass="error"/> <br/>
             <form:input path="product" name="product"/> <br/>
 
             <br/>
 
-            <label for="price">Цена</label> <form:errors path="price" cssClass="error"/> <br/>
+            <label for="price">Цена</label> <br/>
+            <form:errors path="price" cssClass="error"/> <br/>
             <form:input path="price" name="price"/>
 
             <br/>

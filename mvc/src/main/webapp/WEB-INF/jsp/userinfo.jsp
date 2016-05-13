@@ -18,15 +18,6 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/${context}/userlist">Список пользователей</a></li>
@@ -41,13 +32,16 @@
     <div class="starter-template">
         <form:form method="post" modelAttribute="user">
 
-            <label for="name">Имя</label> <form:errors path="firstname" cssClass="error"/> <br/>
+            <label for="name">Имя</label> <br/>
+            <form:errors path="firstname" cssClass="error"/> <br/>
             <form:input path="firstname" name="name" value="${user.firstname}"/> <br/>
 
-            <label for="lastname">Фамилия</label> <form:errors path="lastname" cssClass="error"/> <br/>
+            <label for="lastname">Фамилия</label> <br/>
+            <form:errors path="lastname" cssClass="error"/> <br/>
             <form:input path="lastname" type="text" name="lastname" value="${user.lastname}"/> <br/>
 
-            <label for="age">Возраст</label> <form:errors path="age" cssClass="error"/> <br/>
+            <label for="age">Возраст</label> <br/>
+            <form:errors path="age" cssClass="error"/> <br/>
             <form:input path="age" type="text" name="age" value="${user.age}"/> <br/>
             <input type="submit" value="Принять" class="btn btn-primary">
         </form:form>
