@@ -38,7 +38,7 @@
     </div>
 </nav>
 <div class="container">
-    <div class="col-md-6 center-block">
+    <div class="starter-template">
         <form:form method="post" modelAttribute="user">
 
             <label for="name">Имя</label> <form:errors path="firstname" cssClass="error"/> <br/>

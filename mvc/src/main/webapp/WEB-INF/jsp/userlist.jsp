@@ -11,7 +11,7 @@
     <c:set value="mvc-1.0-SNAPSHOT" var="context"/>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -24,7 +24,7 @@
     </div>
 </nav>
 <div class="container">
-    <div class="col-md-6 center-block">
+    <div class="starter-template">
         <table class="table table-bordered" width="400" border="1">
             <caption>Список пользователей</caption>
             <tr>

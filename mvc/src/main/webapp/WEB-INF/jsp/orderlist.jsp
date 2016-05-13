@@ -32,7 +32,7 @@
     </div>
 </nav>
 <div class="container">
-    <div class="col-md-6 center-block">
+    <div class="starter-template">
 
         <table width="500" border="1" class="table table-bordered">
             <caption>Список заказов</caption>

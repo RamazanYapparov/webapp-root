@@ -36,7 +36,7 @@
     </div>
 </nav>
 <div class="container">
-    <div class="col-md-6 center-block">
+    <div class="starter-template">
         <form:form method="post" modelAttribute="order">
 
             <label for="customer">Покупатель</label> <form:errors path="customer" cssClass="error"/> <br/>
