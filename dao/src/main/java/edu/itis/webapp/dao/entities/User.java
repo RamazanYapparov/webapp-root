@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity
@@ -23,10 +24,12 @@ public class User implements GenericEntity {
     private Long id;
 
     @NotEmpty(message = "заполните поле")
+    @Pattern(regexp = "\\D*", message = "не должен содержать цифр")
     @Column(name = "firstname")
     private String firstname;
 
     @NotEmpty(message = "заполните поле")
+    @Pattern(regexp = "\\D*", message = "не должен содержать цифр")
     @Column(name = "lastname")
     private String lastname;
 
@@ -73,6 +76,10 @@ public class User implements GenericEntity {
     @Override
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getFio() {
+        return firstname + " " + lastname;
     }
 
 }
