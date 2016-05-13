@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/center.css" rel="stylesheet">
-    <c:set value="mvc-1.0-SNAPSHOT" var="context"/>
+    <c:set value="${pageContext.request.contextPath}" var="context"/>
     <title>Список заказов</title>
 </head>
 <body>
@@ -14,10 +14,10 @@
     <div class="container">
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/${context}/userlist">Список пользователей</a></li>
-                <li><a href="/${context}/adduser">Добавить пользователя</a></li>
-                <li><a href="/${context}/orderlist">Список заказов</a></li>
-                <li><a href="/${context}/addorder">Добавить заказ</a></li>
+                <li><a href="${context}/userlist">Список пользователей</a></li>
+                <li><a href="${context}/adduser">Добавить пользователя</a></li>
+                <li><a href="${context}/orderlist">Список заказов</a></li>
+                <li><a href="${context}/addorder">Добавить заказ</a></li>
             </ul>
         </div>
     </div>
@@ -44,12 +44,12 @@
                         <ul class="list-inline">
                             <li>
                                 <form:form method="get" action="/${context}/updateorder">
-                                    <input type="hidden" name="id" value="${order.getId()}"/>
+                                    <input type="hidden" name="id" value="${order.id}"/>
                                     <input type="submit" value="Изменить" class="btn btn-primary"/>
                                 </form:form></li>
                             <li>
                                 <form:form method="post" action="/${context}/deleteorder">
-                                    <input type="hidden" name="id" value="${order.getId()}"/>
+                                    <input type="hidden" name="id" value="${order.id}"/>
                                     <input type="submit" value="Удалить" class="btn btn-danger">
                                 </form:form>
                             </li>

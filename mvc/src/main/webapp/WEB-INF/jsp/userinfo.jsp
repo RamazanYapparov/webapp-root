@@ -11,7 +11,7 @@
             color: #ff0000;
         }
     </style>
-    <c:set value="mvc-1.0-SNAPSHOT" var="context"/>
+    <c:set value="${pageContext.request.contextPath}" var="context"/>
 </head>
 <body>
 </body>
@@ -20,10 +20,10 @@
     <div class="container">
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/${context}/userlist">Список пользователей</a></li>
-                <li><a href="/${context}/adduser">Добавить пользователя</a></li>
-                <li><a href="/${context}/orderlist">Список заказов</a></li>
-                <li><a href="/${context}/addorder">Добавить заказ</a></li>
+                <li><a href="${context}/userlist">Список пользователей</a></li>
+                <li><a href="${context}/adduser">Добавить пользователя</a></li>
+                <li><a href="${context}/orderlist">Список заказов</a></li>
+                <li><a href="${context}/addorder">Добавить заказ</a></li>
             </ul>
         </div>
     </div>

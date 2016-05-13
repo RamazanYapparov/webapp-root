@@ -8,7 +8,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/center.css" rel="stylesheet">
     <title>Список пользователей</title>
-    <c:set value="mvc-1.0-SNAPSHOT" var="context"/>
+    <c:set value="${pageContext.request.contextPath}" var="context"/>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
