@@ -26,7 +26,7 @@ public class UserController {
 
     @RequestMapping(value = "/userlist", method = RequestMethod.GET)
     public String userlist(Model model) {
-        List userList = userService.getAll();
+        List<User> userList = userService.getAll();
         model.addAttribute("userList", userList);
         return "userlist";
     }

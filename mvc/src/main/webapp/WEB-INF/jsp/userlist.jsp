@@ -15,17 +15,17 @@
     <div class="container">
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/${context}/userlist">Список пользователей</a></li>
-                <li><a href="/${context}/adduser">Добавить пользователя</a></li>
-                <li><a href="/${context}/orderlist">Список заказов</a></li>
-                <li><a href="/${context}/addorder">Добавить заказ</a></li>
+                <li><a href="${context}/userlist">Список пользователей</a></li>
+                <li><a href="${context}/adduser">Добавить пользователя</a></li>
+                <li><a href="${context}/orderlist">Список заказов</a></li>
+                <li><a href="${context}/addorder">Добавить заказ</a></li>
             </ul>
         </div>
     </div>
 </nav>
 <div class="container">
     <div class="starter-template">
-        <table class="table table-bordered" width="400" border="1">
+        <table class="table table-bordered">
             <caption>Список пользователей</caption>
             <tr>
                 <th>Фамилия</th>
@@ -35,18 +35,24 @@
             </tr>
             <c:forEach items="${userList}" var="user">
                 <tr>
-                    <td>${user.getFirstname()}</td>
-                    <td>${user.getLastname()}</td>
-                    <td>${user.getAge()}</td>
+                    <td>${user.firstname}</td>
+                    <td>${user.lastname}</td>
+                    <td>${user.age}</td>
                     <td>
-                        <form:form method="get" action="/${context}/userupdate">
-                            <input type="hidden" name="id" value="${user.getId()}"/>
-                            <input type="submit" value="Изменить" class="btn btn-primary"/>
-                        </form:form>
-                        <form:form method="post" action="/${context}/userdelete">
-                            <input type="hidden" name="id" value="${user.getId()}"/>
-                            <input type="submit" value="Удалить" class="btn btn-danger">
-                        </form:form>
+                        <ul class="list-inline">
+                            <li>
+                                <form:form method="get" action="/${context}/userupdate">
+                                    <input type="hidden" name="id" value="${user.id}"/>
+                                    <input type="submit" value="Изменить" class="btn btn-primary"/>
+                                </form:form>
+                            </li>
+                            <li>
+                                <form:form method="post" action="/${context}/userdelete">
+                                    <input type="hidden" name="id" value="${user.id}"/>
+                                    <input type="submit" value="Удалить" class="btn btn-danger">
+                                </form:form>
+                            </li>
+                        </ul>
                     </td>
                 </tr>
             </c:forEach>
