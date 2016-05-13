@@ -16,6 +16,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <build>
+        <!--<finalName></finalName>-->
         <plugins>
             <plugin>
                 <artifactId>maven-antrun-plugin</artifactId>
@@ -28,14 +29,6 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
-            <!--<plugin>
-                <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven2-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-            </plugin>-->
         </plugins>
     </build>
 

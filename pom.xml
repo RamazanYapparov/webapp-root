@@ -60,67 +60,6 @@
                         </execution>
                     </executions>
                 </plugin>
-                <!--<plugin>
-                    <groupId>org.codehaus.cargo</groupId>
-                    <artifactId>cargo-maven2-plugin</artifactId>
-                    <version>${cargo.version}</version>
-                    <configuration>
-                        <container>
-                            <containerId>tomcat8x</containerId>
-                            <artifactInstaller>
-                                <groupId>org.apache.tomcat</groupId>
-                                <artifactId>tomcat</artifactId>
-                                <version>${tomcat.version}</version>
-                                <type>zip</type>
-                            </artifactInstaller>
-                        </container>
-                        <deployables>
-                            <deployable>
-                                <properties>
-                                    <context>${context}</context>
-                                </properties>
-                            </deployable>
-                        </deployables>
-                        <configuration>
-                            <properties>
-                                <cargo.hostname>${hostname}</cargo.hostname>
-                                <cargo.servlet.port>${port}</cargo.servlet.port>
-                                <cargo.tomcat.uriencoding>${encoding}</cargo.tomcat.uriencoding>
-                                <cargo.jvmargs>-Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=n
-                                </cargo.jvmargs>
-                            </properties>
-                        </configuration>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>start-tomcat</id>
-                            <phase>pre-integration-test</phase>
-                            <goals>
-                                <goal>start</goal>
-                            </goals>
-                        </execution>
-                        &lt;!&ndash;<execution>
-                            <id>stop-tomcat</id>
-                            <phase>post-integration-test</phase>
-                            <goals>
-                                <goal>stop</goal>
-                            </goals>
-                        </execution>&ndash;&gt;
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>${maven.failsafe.plugin}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>integration-test</goal>
-                                <goal>verify</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>-->
             </plugins>
         </pluginManagement>
     </build>
