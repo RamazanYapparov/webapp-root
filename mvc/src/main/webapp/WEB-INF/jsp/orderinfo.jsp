@@ -60,6 +60,7 @@
             <br/>
 
             <input type="submit" value="Принять" class="btn btn-primary">
+            <a href="${context}/orderlist" class="btn btn-danger">Назад</a>
         </form:form>
     </div>
 </div>

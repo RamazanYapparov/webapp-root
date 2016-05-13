@@ -42,8 +42,13 @@
 
             <label for="age">Возраст</label> <br/>
             <form:errors path="age" cssClass="error"/> <br/>
-            <form:input path="age" type="text" name="age" value="${user.age}"/> <br/>
+            <form:input path="age" type="text" name="age" value="${user.age}"/>
+
+            <br/>
+            <br/>
+
             <input type="submit" value="Принять" class="btn btn-primary">
+            <a href="${context}/userlist" class="btn btn-danger">Назад</a>
         </form:form>
     </div>
 </div>

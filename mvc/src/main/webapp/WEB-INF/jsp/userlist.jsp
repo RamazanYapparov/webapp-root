@@ -41,13 +41,13 @@
                     <td>
                         <ul class="list-inline">
                             <li>
-                                <form:form method="get" action="/${context}/userupdate">
+                                <form:form method="get" action="${context}/userupdate">
                                     <input type="hidden" name="id" value="${user.id}"/>
                                     <input type="submit" value="Изменить" class="btn btn-primary"/>
                                 </form:form>
                             </li>
                             <li>
-                                <form:form method="post" action="/${context}/userdelete">
+                                <form:form method="post" action="${context}/userdelete">
                                     <input type="hidden" name="id" value="${user.id}"/>
                                     <input type="submit" value="Удалить" class="btn btn-danger">
                                 </form:form>
